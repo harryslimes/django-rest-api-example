@@ -40,7 +40,7 @@ class TestProductDetailTestCase(APITestCase):
 
     def setUp(self):
         self.product = ProductFactory()
-        self.url = reverse('product-detail', kwargs={'pk': self.product.pk})
+        self.url = reverse('product-detail', kwargs={'sku': self.product.sku})
 
     def test_get_request_returns_a_given_user(self):
         response = self.client.get(self.url)
